@@ -1,0 +1,236 @@
+.heading-nav {
+  font-family: $crimsonpro;
+  font-weight: 200;
+  font-size: 1.4rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid $white;
+}
+
+.navigation-bar {
+  flex: 0 0 45%;
+  display: flex;
+  justify-content: space-between;
+
+  @media only screen and (max-width: $bp-small) {
+    display: none;
+  }
+
+  *:not(:last-child) {
+    margin-right: 1.5rem;
+  }
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.8rem;
+    font-family: $montserrat;
+    font-weight: 700;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    position: relative;
+  }
+}
+
+.navigation {
+  width: 3.8rem;
+  height: 3.8rem;
+  z-index: 40;
+  top: 1.5rem;
+  right: 3rem;
+  position: fixed;
+
+  @media only screen and (min-width: $bp-small) {
+    display: none;
+  }
+  &__checkbox {
+    display: none;
+  }
+  &__button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 2.9rem;
+    height: 2.9rem;
+    cursor: pointer;
+  }
+  &__icon,
+  &__icon::after,
+  &__icon::before {
+    position: absolute;
+    content: "";
+    width: 2.9rem;
+    height: 0.2rem;
+    background-color: $white;
+    left: 0;
+    display: inline-block;
+    transition: all 0.2s;
+    z-index: 30;
+  }
+
+  &__icon::after {
+    top: 1rem;
+  }
+
+  &__icon::before {
+    top: -1rem;
+  }
+
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
+
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+}
+
+.navigation__background {
+  position: fixed;
+  top: -10rem;
+  right: -10rem;
+  width: 0vw;
+  height: 0vh;
+  background-color: $black;
+  z-index: 20;
+  transition: all 0.2s;
+
+  .navigation__list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.visible {
+  width: 100vw;
+  height: 100vh;
+  top: 0rem;
+  right: 0rem;
+}
+
+.text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  flex: 0 0 50%;
+  // width: 100%;
+  *:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+  &__heading {
+    font-family: $lora;
+    font-size: 4.8rem;
+    font-weight: 400;
+    color: inherit;
+  }
+  &__paragraph {
+    font-family: $montserrat;
+    font-size: 2.4rem;
+    font-weight: 200;
+    color: inherit;
+    line-height: 3rem;
+  }
+  &__button {
+    text-decoration: none;
+    color: inherit;
+    font-family: $montserrat;
+    font-size: 1.8rem;
+    font-weight: 700;
+    position: relative;
+    transition: all 0.2s;
+    padding-bottom: 5px;
+    z-index: -1;
+  }
+}
+
+.animated-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: $white;
+  transform: scaleX(0);
+  transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+    background-color 0.1s;
+}
+
+.animated-link:hover::before {
+  transform: scaleX(1);
+}
+
+.animated-link:hover {
+  transform: translateY(-1rem);
+}
+
+.design-view {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+
+  .design-photo {
+    max-width: 100%;
+  }
+}
+
+.designer-box {
+  background-color: $black;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  padding: 1rem 1rem 3rem 2rem;
+  // max-width: 41rem;
+  // min-width: 30rem;
+  min-width: 60%;
+  max-width: 90%;
+  margin-top: -10%;
+  margin-right: 2rem;
+
+  //
+  &__details {
+    display: flex;
+    align-items: center;
+  }
+
+  &__photo {
+    width: 5rem;
+    border-radius: 50%;
+    margin: 1.2rem 1.8rem;
+  }
+
+  &__text {
+    font-family: $montserrat;
+    font-weight: 500;
+    .name {
+      font-size: 1.4rem;
+      line-height: 1.7rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .profesion {
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      color: #828282;
+    }
+  }
+
+  .heading__2 {
+    font-family: $lora;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3rem;
+  }
+}

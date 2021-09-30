@@ -1,0 +1,48 @@
+//fonts
+$crimsonpro: "Crimson Pro", serif;
+$lora: "Lora", serif;
+$montserrat: "Montserrat", sans-serif;
+
+// colors
+$black: #181719;
+$white: #ffff;
+
+//breakpoints
+
+$bp-big: 68.75em; //1100px / 16px
+$bp-medium: 46.25em; //740/ 16
+$bp-small: 31.25em; //500 / 16
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  background-color: $black;
+
+  @media only screen and (max-width: $bp-big) {
+    font-size: 50%;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 40%;
+  }
+}
+
+.container {
+  color: $white;
+  padding: 4.2rem 7.7rem;
+  width: 100vw;
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 2rem 3rem;
+  }
+}
