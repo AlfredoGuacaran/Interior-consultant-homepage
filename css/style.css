@@ -210,7 +210,6 @@ html {
   position: relative;
   transition: all 0.2s;
   padding-bottom: 5px;
-  z-index: -1;
 }
 
 .animated-link::before {
